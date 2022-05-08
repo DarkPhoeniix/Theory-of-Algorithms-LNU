@@ -1,10 +1,11 @@
 
 #include "Utility.h"
+#include "Sort.h"
 
 #include <iostream>
 #include <chrono>
 
-const int SIZE = 1000000;
+const int SIZE = 1000;
 
 int main(int argc, char* argv[])
 {
@@ -14,6 +15,7 @@ int main(int argc, char* argv[])
 
     std::chrono::time_point start = std::chrono::high_resolution_clock::now();
     // TODO: sort here
+    Sort::bubbleSort(array, SIZE);
     std::chrono::time_point end = std::chrono::high_resolution_clock::now();
 
     std::cout << "Data: " << '\n'
