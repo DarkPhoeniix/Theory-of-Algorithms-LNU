@@ -6,8 +6,7 @@ SET(CMAKE_C_FLAGS "-O0")
 
 set(CMAKE_CXX_STANDARD 20)
 
-find_package( PythonInterp REQUIRED )
-find_package( PythonLibs REQUIRED )
-include_directories ( ${PYTHON_INCLUDE_DIRS} )
+find_package (Python REQUIRED
+        COMPONENTS Interpreter Development)
 
-add_executable(task_01 main.cpp Utility.h Utility.cpp Sort.h Sort.cpp)
+add_subdirectory(src)
