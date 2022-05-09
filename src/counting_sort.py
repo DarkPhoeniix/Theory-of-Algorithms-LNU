@@ -25,7 +25,6 @@ def counting_sort(array: list[int], radix: int):
         count[index % 10] -= 1
         i -= 1
 
-    i = 0
     for i in range(0, len(array)):
         array[i] = output[i]
 
