@@ -5,7 +5,7 @@ add_executable(task_01
         Utility.h
         Sort.h
         Utility.cpp
-        Sort.cpp)
+        Sort.cpp Application.cpp)
 
 find_package (Python REQUIRED
         COMPONENTS Interpreter Development)
