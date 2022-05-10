@@ -5,7 +5,8 @@
 #include <map>
 #include <functional>
 
-class Application{
+class Application
+{
 public:
     Application();
     int execute(int argc, char* argv[]);
