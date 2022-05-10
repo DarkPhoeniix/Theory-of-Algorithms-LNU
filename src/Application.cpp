@@ -19,7 +19,7 @@ namespace
         int upperBound = std::stoi(argv[2]);
         int step = std::stoi(argv[3]);
 
-        if (lowerBound < 0 || upperBound < 0 || step < 0)
+        if ((lowerBound < 0) || (upperBound < 0) || (step < 0))
         {
             result &= 0;
         }
@@ -27,7 +27,7 @@ namespace
         {
             result &= 0;
         }
-        else if ((upperBound - lowerBound) % step != 0)
+        else if (((upperBound - lowerBound) % step) != 0)
         {
             result &= 0;
         }
