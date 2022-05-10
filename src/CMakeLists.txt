@@ -1,11 +1,13 @@
 include_directories(.)
 
 add_executable(task_01
-                main.cpp
-                Utility.h
-                Sort.h
-                Utility.cpp
-                Sort.cpp)
+        main.cpp
+        Utility.h
+        Application.h
+        Sort.h
+        Utility.cpp
+        Sort.cpp
+        Application.cpp)
 
 find_package (Python REQUIRED
         COMPONENTS Interpreter Development)
