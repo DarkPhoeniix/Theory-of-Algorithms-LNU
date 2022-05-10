@@ -18,5 +18,4 @@ private:
     std::map<std::string, SortingAlgorithm> sortingAlgorithms;
 };
 
-
 #endif //TASK_01_APPLICATION_H
