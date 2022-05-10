@@ -5,7 +5,8 @@
 #include <iostream>
 #include <chrono>
 
-namespace {
+namespace
+{
     bool validate(int argc, char* argv[])
     {
         bool result = true;
