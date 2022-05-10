@@ -1,4 +1,4 @@
-"""Implementation of counting sort in python"""
+"""Implementation of radix sort in python"""
 
 
 def counting_sort(array: list[int], radix: int):
@@ -35,3 +35,13 @@ def counting_sort(array: list[int], radix: int):
         if output[i] > 0:
             array[last_appended_index] = output[i]
             last_appended_index += 1
+
+
+def radix_sort(array: list[int]):
+    """Function, which sorts an array using radix sort algorithm"""
+    maximum_element = max(array)
+
+    radix = 1
+    while maximum_element / radix > 1:
+        counting_sort(array, radix)
+        radix *= 10
