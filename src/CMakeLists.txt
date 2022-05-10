@@ -12,6 +12,10 @@ add_executable(task_01
 find_package (Python REQUIRED
         COMPONENTS Interpreter Development)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${Python_INCLUDE_DIRS})
-target_link_directories(${PROJECT_NAME} PRIVATE ${Python_LIBRARY_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${Python_LIBRARIES})
+find_package(pybind11 CONFIG REQUIRED)
+
+set(PYBIND11_CPP_STANDARD -std=c++20)
+set(PYBIND11_PYTHON_VERION 3.10 CHACHE STRING "")
+
+target_link_libraries(task_01 PRIVATE Python::Python)
+target_link_libraries(task_01 PRIVATE pybind11::embed)
