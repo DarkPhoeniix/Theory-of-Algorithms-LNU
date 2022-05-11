@@ -1,6 +1,9 @@
 #ifndef TASK_01_APPLICATION_H
 #define TASK_01_APPLICATION_H
 
+#include <pybind11/embed.h>
+#include <pybind11/cast.h>
+#include <pybind11/stl.h>
 #include <string>
 #include <map>
 #include <functional>
