@@ -1,3 +1,4 @@
+
 #include "Application.h"
 #include "Sort.h"
 #include "Utility.h"
@@ -25,10 +26,6 @@ namespace
             result &= 0;
         }
         else if (lowerBound > upperBound)
-        {
-            result &= 0;
-        }
-        else if (((upperBound - lowerBound) % step) != 0)
         {
             result &= 0;
         }
@@ -75,7 +72,7 @@ int Application::execute(int argc, char* argv[])
 
                 std::cout << sortingAlgorithm.first << "using" << arrayGen.first << '\n'
                           << "size: " << size << '\n'
-                          << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " ms" << std::endl << std::endl;
+                          << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " ms" << '\n' << std::endl;
 
                 delete[] arrayToSort;
             }
