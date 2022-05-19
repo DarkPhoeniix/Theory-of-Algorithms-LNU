@@ -1,6 +1,7 @@
 
 #include "Sort.h"
 
+#include <algorithm>
 #include <utility>
 #include <cstring>
 #include <vector>
@@ -106,5 +107,10 @@ namespace Sort
                 array[i++] = sortedWithoutSign[j];
             }
         }
+    }
+
+    void stdSort(int* array, size_t size)
+    {
+        std::sort(array, array + size);
     }
 } // namespace Sort

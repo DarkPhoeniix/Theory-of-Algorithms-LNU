@@ -1,4 +1,5 @@
 
+#include <algorithm>
 #include <cuchar>
 #include <utility>
 #include <iostream>
