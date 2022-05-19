@@ -51,6 +51,7 @@ Application::Application()
 
     sortingAlgorithms["bubbleSort"] = Sort::bubbleSort;
     sortingAlgorithms["radixSort"] = Sort::radixSort;
+    sortingAlgorithms["stdSort"] = Sort::stdSort;
 }
 
 int Application::execute(int argc, char* argv[])
@@ -69,6 +70,7 @@ int Application::execute(int argc, char* argv[])
 
     pybind11::module_ pyBubbleSortModule = pybind11::module_::import("scripts.bubble_sort");
     pybind11::module_ pyRadixSortModule = pybind11::module_::import("scripts.radix_sort");
+    pybind11::module_ pyStdSortModule = pybind11::module_::import("scripts.std_sort");
 
     std::string name = argv[1];
     int lowerBound = std::stoi(argv[2]);
@@ -105,6 +107,14 @@ int Application::execute(int argc, char* argv[])
                 else if (argv[1] == std::string("radixSort"))
                 {
                     auto sortingAlgorithm = pyRadixSortModule.attr("radix_sort");
+                    pybind11::list pyList = pybind11::cast(std::vector<int>(arrayToSort, arrayToSort + size));
+                    start = std::chrono::high_resolution_clock::now();
+                    sortingAlgorithm(pyList);
+                    end = std::chrono::high_resolution_clock::now();
+                }
+                else if (argv[1] == std::string("stdSort"))
+                {
+                    auto sortingAlgorithm = pyStdSortModule.attr("std_sort");
                     pybind11::list pyList = pybind11::cast(std::vector<int>(arrayToSort, arrayToSort + size));
                     start = std::chrono::high_resolution_clock::now();
                     sortingAlgorithm(pyList);
